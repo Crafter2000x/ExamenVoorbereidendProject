@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "User Edit";
+}
+@*@model OverviewViewModel*@
+
+<div class="container-fluid">
+    <div class="col-sm-12" style="color: #7289DA; text-align: left">
+        <h1 style="color: black">CURRENT USERS</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Usermane</th>
+                    <th>Password</th>
+                    <th>Admin Status</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+        </table>
+
+        @if (Model.UsersList != null && Model.UsersList.Count != 0)
+        {
+            foreach (User user in Model.UsersList)
+            {
+        <form asp-controller="Home" asp-action="">
+            <input type="text" value="@user.Id" disabled>
+            <input type="text" value="@user.Username">
+
+
+
+        </form>
+            }
+         }
+
+    </div>
+</div>
+
+
+
+@*@if (Model.UsersList != null && Model.UsersList.Count != 0)
+{
+    foreach (User user in Model.UsersList)
+    {
+        <form>
+
+
+
+
+
+
+            <tr>
+                <td><input type="text" value="@user.Id" disabled></td>
+                <td><input type="text" value="@user.Username" disabled></td>
+                <td><input type="password" value="@user.Password" disabled></td>
+                <td><input type="checkbox" checked="@user.Admin" disabled></td>
+                <td><form asp-controller="Home" asp-action="DeleteUser" asp-route-UserId="@user.Id"><input type="submit" value="Delete"></form></td>
+                <td><form asp-controller="Home" asp-action="UserEdit" asp-route-UserId="@user.Id"><input type="submit" value="Edit"></form></td>
+            </tr>
+            }
+            }*@

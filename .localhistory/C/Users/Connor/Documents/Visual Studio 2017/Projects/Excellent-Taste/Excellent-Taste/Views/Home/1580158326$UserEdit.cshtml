@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "User Edit";
+}
+
+@model UserEditViewModel
+
+
+<div class="container-fluid">
+    <div class="col-sm-12" style="color: #7289DA; text-align: center">
+        <h1 style="color: black">EDIT USER</h1>
+
+        <form asp-controller="Home" asp-action="UpdateUser">
+            <label value="@Model.SingleUser.Id"asp-for="@Model.SingleUser.Id"></label>
+            <input type="text" value="@Model.SingleUser.Username" asp-for="@Model.SingleUser.Username">
+            <input type="password" value="@Model.SingleUser.Password" asp-for="@Model.SingleUser.Password">
+            <input type="checkbox" checked="@Model.SingleUser.Admin" asp-for="@Model.SingleUser.Admin">
+            <input type="submit" value="Update">
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "User Control";
+}
+@model CreateUserViewModel
+
+<div class="container-fluid">
+    <div class="col-sm-10" style="color: #7289DA; background-color: lightcoral; text-align: left">
+        <h1 style="color: black">CURRENT USERS</h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>Leerlingnummer</th>
+                <th>Klas</th>
+                <th>Telefoonnummer</th>
+                <th>Console?</th>
+                <th>Console details</th>
+                <th>Computer?</th>
+                <th>Computer details</th>
+                <th>Al betaald?</th>
+                <th>Betaal</th>
+            </tr>
+        </table>
+ 
+    </div>
+    <div class="col-sm-2" style="color: #7289DA; background-color: lightgreen; text-align: center">
+        <button asp-controller="Home" asp-action="Index">Add users</button>
+    </div>
+</div>

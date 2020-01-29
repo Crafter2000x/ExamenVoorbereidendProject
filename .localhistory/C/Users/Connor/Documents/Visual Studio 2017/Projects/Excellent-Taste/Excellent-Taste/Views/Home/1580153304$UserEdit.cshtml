@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "User Edit";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12" style="color: #7289DA; text-align: center">
+        <h1 style="color: black">EDIT USER</h1>
+
+
+        @if (Model.UsersList != null && Model.UsersList.Count != 0)
+        {
+            foreach (User user in Model.UsersList)
+            {
+                <form asp-controller="Home" asp-action="">
+                    <input type="text" value="@user.Id" disabled>
+                    <input type="text" value="@user.Username">
+                    <input type="password" value="@user.Password">
+                    <input type="checkbox" checked="@user.Admin">
+                    <input type="submit" value="Update">
+                </form>
+            }
+         }
+
+    </div>
+</div>

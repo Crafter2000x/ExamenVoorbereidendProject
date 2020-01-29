@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+    ViewData["Message"] = "Login Failed";
+}
+@model LoginViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Excellent Taste</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-sm-4"> </div>
+        <div class="col-sm-4 " style="color: #7289DA; background-color: lightblue; text-align: center">
+            <br>
+            <h3>@ViewData["Message"]</h3>
+            <form asp-action="CheckLogin" asp-controller="Home">
+                <div>Username</div>
+                <input type="text" name="Username" asp-for="Username" required>
+                <br>
+                <div>Password</div>
+                <input type="password" name="Password" asp-for="Password" required>
+                <br><br>
+                <input type="submit" value="Login" class="btn-primary">
+            </form>
+            <br>
+        </div>
+        <div class="col-sm-4"> </div>
+    </div>
+</body>
+</html>

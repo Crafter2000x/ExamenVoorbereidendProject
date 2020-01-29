@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "User Control";
+}
+@model CreateUserViewModel
+
+<div class="container-fluid">
+    <div class="col-sm-12" style="color: #7289DA; background-color: lightgreen; text-align: center">
+        <form asp-action="CreateUser" asp-controller="Home">
+            <h1 style="color: black">ADD USER</h1>
+            <div>Username</div>
+            <input type="text" name="Username" asp-for="Username" required>
+            <br>
+            <div>Password</div>
+            <input type="password" name="Password" asp-for="Password" required>
+            <br>
+            <div>Admin status</div>
+            <input type="checkbox" name="Admin" asp-for="Admin">
+            <br><br>
+            <input type="submit" value="Create User" class="btn-primary">
+        </form>
+        <br>
+        <h3>@ViewData["Message"]</h3>
+    </div>
+</div>

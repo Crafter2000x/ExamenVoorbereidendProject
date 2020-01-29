@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "User Control";
+}
+@model OverviewViewModel
+
+<div class="container-fluid">
+    <div class="col-sm-10" style="color: #7289DA; background-color: lightcoral; text-align: left">
+        <h1 style="color: black">CURRENT USERS</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Usermane</th>
+                    <th>Password</th>
+                    <th>Admin Status</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>Admin</td>
+                    <td>1234</td>
+                    <td>Yes</td>
+                    <td>Delete</td>
+                    <td>Edit</td>
+                </tr>
+
+                @if ()
+
+            </tbody>
+
+
+        </table>
+
+ 
+    </div>
+    <div class="col-sm-2" style="color: #7289DA; background-color: lightgreen; text-align: center">
+
+        <a asp-action="UserAdd" asp-controller="Home">Add user</a>
+        
+    </div>
+</div>

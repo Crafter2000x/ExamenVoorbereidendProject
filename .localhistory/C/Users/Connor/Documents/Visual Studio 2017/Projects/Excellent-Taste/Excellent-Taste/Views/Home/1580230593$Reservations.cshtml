@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Reservations";
+}
+
+
+<div class="container-fluid">
+    <div class="col-sm-12" style="color: #7289DA; text-align: left">
+        <h1 style="color: black">CURRENT USERS</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ReservationId</th>
+                    <th>Lastname</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>PhoneNum</th>
+                    <th>TableNum</th>
+                    <th>Notes</th>
+                    <th>Arrived?</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (Model.UsersList != null && Model.UsersList.Count != 0)
+                {
+                    foreach (User user in Model.UsersList)
+                    {
+                        <tr>
+                            <td><input type="text" value="@user.Id" disabled></td>
+                            <td><input type="text" value="@user.Username" disabled></td>
+                            <td><input type="password" value="@user.Password" disabled></td>
+                            <td><input type="checkbox" checked="@user.Admin" disabled></td>
+                            <td><form asp-controller="Home" asp-action="DeleteUser" asp-route-UserId="@user.Id"><input type="submit" value="Delete"></form></td>
+                            <td><form asp-controller="Home" asp-action="UserEdit" asp-route-UserId="@user.Id"><input type="submit" value="Edit"></form></td>
+                        </tr>
+                    }
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

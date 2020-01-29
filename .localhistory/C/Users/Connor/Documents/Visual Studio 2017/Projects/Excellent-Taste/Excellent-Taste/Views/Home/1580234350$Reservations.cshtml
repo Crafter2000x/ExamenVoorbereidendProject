@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Reservations";
+}
+
+
+<div class="container-fluid">
+    <div style="color: #7289DA; width: 100%; text-align: left">
+        <h1 style="color: black">CURRENT USERS</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ReservationId</th>
+                    <th>Lastname</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>PhoneNum</th>
+                    <th>TableNum</th>
+                    <th>Notes</th>
+                    <th>Arrived?</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (Model.ReservationList != null && Model.ReservationList.Count != 0)
+                {
+                    foreach (Reservation Reservation in Model.ReservationList)
+                    {
+                        <tr>
+                            <td><input type="text" value="@Reservation.ReservationId" disabled></td>
+                            <td><input type="text" value="@Reservation.Lastname" disabled></td>
+                            <td><input type="text" value="@Reservation.Amount" disabled></td>
+                            <td><input type="text" value="@Reservation.Date.ToString("d")" disabled></td>
+                            <td><input type="text" value="@Reservation.Time" disabled></td>
+                            <td><input type="text" value="@Reservation.PhoneNum" disabled></td>
+                            <td><input type="text" value="@Reservation.TableNum" disabled></td>
+                            <td><input type="text" value="@Reservation.Notes" disabled></td>
+                            <td><input type="text" value="@Reservation.Arrived" disabled></td>
+                            <td><input type="text" value="Delete" disabled></td>
+                        </tr>
+                    }
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

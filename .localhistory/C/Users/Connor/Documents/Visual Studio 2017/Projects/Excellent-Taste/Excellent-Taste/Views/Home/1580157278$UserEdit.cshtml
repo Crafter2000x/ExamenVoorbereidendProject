@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "User Edit";
+}
+
+<div class="container-fluid">
+    <div class="col-sm-12" style="color: #7289DA; text-align: center">
+        <h1 style="color: black">EDIT USER</h1>
+
+                <form asp-controller="Home" asp-action="UpdateUser">
+                    <input type="text" value="@" disabled>
+                    <input type="text" value="@" asp-for="Username">
+                    <input type="password" value="@user.Password">
+                    <input type="checkbox" checked="@user.Admin">
+                    <input type="submit" value="Update">
+                </form>
+  
+    </div>
+</div>
